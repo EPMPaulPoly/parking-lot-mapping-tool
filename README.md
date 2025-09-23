@@ -1,7 +1,7 @@
 # Parking Lot Segmentation Tool  
 
 ## Overview  
-This repository provides a **parking lot segmentation tool** that detects and delineates parking lots from **large satellite images**.  
+This repository provides a **parking lot segmentation tool** that detects and delineates parking lots from large satellite images.  
 The tool uses a SegFormer-large model trained on the dataset introduced in our [WACV 2025 paper](https://ieeexplore.ieee.org/abstract/document/10943617) *“A Pipeline and NIR-Enhanced Dataset for Parking Lot Segmentation.”*  
 
 The pipeline includes both **deep learning segmentation** and **post-processing**, producing a **GeoJSON file** containing polygons for detected parking lots.  
