@@ -37,13 +37,11 @@ jupyter notebook main.ipynb
 
 Open the notebook and follow the steps to:
 
-- Load your satellite image
-
-- Run the segmentation model
-
-- Apply post-processing
-
-- Export results to GeoJSON
+- Prepare your satellite image for your area of interest
+- Run the cells in the notebook to:
+  1. Get the predictions from the model
+  2. Perform the post-processing
+  3. Export the result as a GeoJSON file
 
 ---
 ## Citation
