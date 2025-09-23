@@ -1,0 +1,24 @@
+# Core ML
+torch>=1.13
+torchvision
+pytorch-lightning<2.0.0
+transformers
+datasets
+evaluate
+huggingface_hub
+torchmetrics
+
+# Image / Raster / Geo
+rasterio
+geojson
+geopandas
+shapely
+pyproj
+Pillow
+imageio
+scipy
+
+# Utils
+matplotlib
+numpy
+tqdm
