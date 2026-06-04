@@ -193,7 +193,5 @@ def get_road_data(bbox):
             gdf['width_buffer'] = gdf.apply(lambda row: int(row['lanes']) * 1 if row['highway'] == 'cycleway' else int(row['lanes']) * 3, axis=1)
             gdf_p = gdf.to_crs(epsg=3857)
             gdf_p['geometry'] = gdf_p.apply(lambda row: row['geometry'].buffer(row['width_buffer'], cap_style='flat'), axis=1)
-    
-    # Save the road data
-    gdf_p.to_file('files/road_data.geojson', driver='GeoJSON')
-    print("GeoJSON saved to files/road_data.geojson")
+            gdf_p.to_file('files/road_data.geojson', driver='GeoJSON')
+    #print("GeoJSON saved to files/road_data.geojson")
