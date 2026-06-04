@@ -179,7 +179,7 @@ def pixels_to_coordinates(Polys, lons, lats):
     return Polys_coord
 
 
-def poly_list_to_geojson(Polys_coord, inner_coord, output_path):
+def poly_list_to_geojson(Polys_coord, inner_coord, output_path,crs='EPSG:3857'):
     """
     Save a list of polygons as a GeoJSON file.
 
@@ -194,12 +194,13 @@ def poly_list_to_geojson(Polys_coord, inner_coord, output_path):
     outer_gdf = gpd.GeoDataFrame(data_outer, geometry='geometry')
 
     # Set the CRS (Coordinate Reference System)
-    inner_gdf.set_crs('EPSG:3857', inplace=True)
-    outer_gdf.set_crs('EPSG:3857', inplace=True)
+    inner_gdf.set_crs(crs, inplace=True)
+    outer_gdf.set_crs(crs, inplace=True)
 
     # Compute the union of all inner geometries
     inner_union = unary_union(inner_gdf['geometry'])
 
     # Subtract inner_union from each outer geometry
     outer_gdf['geometry'] = outer_gdf['geometry'].apply(lambda x: x.difference(inner_union))
+    outer_gdf.to_crs('EPSG:3857',inplace=True)
     outer_gdf.to_file(output_path, driver='GeoJSON')

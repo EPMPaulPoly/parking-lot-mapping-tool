@@ -152,9 +152,18 @@ def get_road_data(bbox):
     out body;
     >;
     out skel qt;
-    """
+    """.strip()
 
-    response = requests.get(overpass_url, params={"data": overpass_query})
+    headers = {
+        "User-Agent": "MyOSMApp/1.0",
+    }
+
+    response = requests.post(
+        overpass_url,
+        data=overpass_query,
+        headers=headers,
+        timeout=60
+    )
 
     if response.status_code == 200:
         osm_data = response.json()

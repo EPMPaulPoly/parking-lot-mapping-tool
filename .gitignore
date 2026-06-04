@@ -1,0 +1,6 @@
+.venv
+small_images
+files
+building_dataset
+output_files
+**/__pycache__

@@ -17,7 +17,7 @@ import pytorch_lightning as pl
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
 from pytorch_lightning.loggers import CSVLogger
-from transformers import SegformerFeatureExtractor, SegformerForSemanticSegmentation
+from transformers import SegformerImageProcessor, SegformerForSemanticSegmentation
 # from datasets import load_metric
 from evaluate import load as load_metric
 import torch
